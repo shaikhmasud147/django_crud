@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>My first app</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    </head>
+    <body>
+        <h2>This is django template</h2>
+        <h2>Current datetime now is: {{date}}</h2>
+        <h2>{{msg}}</h2>
+        <img src="{% static 'images/testapp.png' %}" width="500" height="350"/>     
+    </body>
+</html>

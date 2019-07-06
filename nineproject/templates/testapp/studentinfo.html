@@ -1,0 +1,27 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>Student Info</title>
+</head>
+<body>
+    {% if students %}
+    <h2>Student Details</h2>
+    {% for std in students %}
+        <ul>
+            <li>{{std.rollno}}</li>
+            <li>{{std.sname}}</li>
+            <li>{{std.marks}}</li>
+            <li>{{std.mob_no}}</li>
+            <li>{{std.address}}</li>
+        </ul>
+    {%endfor%}
+    {%else%}
+        <h2>Result not found!!</h2>
+    {%endif%}
+</body>
+</html>

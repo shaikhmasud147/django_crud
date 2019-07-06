@@ -1,0 +1,62 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <title>Employee Edit</title>
+</head>
+<body>
+    <form action="/employees/update/{{employee.id}}/" method="POST" class="post-form">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h2>Update Details</h2>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label">Employee Id:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="eno" id="eno" value="{{employee.eno}}" required >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label">Employee Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="ename" id="ename" value="{{employee.ename}}" required >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label">Employee Email:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="eemail" id="eemail" value="{{employee.eemail}}" required >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label">Employee Contact:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="contact" id="contact" value="{{employee.contact}}" required >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label">Employee Address:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="address" id="address" value="{{employee.address}}" required >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

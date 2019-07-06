@@ -1,0 +1,53 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <title>Employee View</title>
+</head>
+<body>
+    <br>  
+    <br>  
+    <p class="" style="text-align:center"><a href="/employees/add" class="btn btn-primary">Add New Record</a></p>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>Employee No</th>
+                <th>Employee Name</th>
+                <th>Employee Email</th>
+                <th>Employee contact</th>
+                <th>Employee Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if employees %}
+                {% for emp in employees %}
+                    <tr>
+                        <td>{{emp.eno}}</td>
+                        <td>{{emp.ename}}</td>
+                        <td>{{emp.eemail}}</td>
+                        <td>{{emp.contact}}</td>
+                        <td>{{emp.address}}</td>   
+                        <td>
+                            <a href="/employees/edit/{{emp.id}}/">
+                                <span class="glyphicon glyphicon-pencil">
+                                    Edit
+                                </span>
+                            </a>
+                            <a href="/employees/delete/{{emp.id}}/">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <h2>Result Not Found!!</h2>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>

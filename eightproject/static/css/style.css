@@ -1,0 +1,12 @@
+body{
+    background: red;
+}
+table{
+    background: yellow;
+}
+h2{
+    color: yellow;
+}
+thead{
+    font-weight: 700;
+}
